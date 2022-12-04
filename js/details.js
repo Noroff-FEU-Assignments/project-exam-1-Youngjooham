@@ -11,11 +11,9 @@ if (id === null) {
 
 const url = "https://localhostflower-power.shop/worldkitchen/wp-json/wp/v2/posts/" + id;
 console.log(url)
-const idContainer = document.querySelector(".id");
 const detailContainer = document.querySelector(".details");
 const modalContainer = document.querySelector(".modal");
 
-idContainer.innerHTML = id;
 
 async function fetchID() {
     try {
@@ -38,7 +36,7 @@ function createHtml(posts) {
     detailContainer.innerHTML = `<h1>${posts.title.rendered}</h1>
                                  <img id="myImg" src=${posts.better_featured_image.source_url}> </img> 
                                  <p> ${posts.content.rendered}</p>
-                                 <p> ${posts.date}</p>
+                                 <p> ${posts.date.slice(0, -9)}</p>
                                  `;
 
     modalContainer.innerHTML = `<img id="modalImg" src=${posts.better_featured_image.source_url}> </img>`

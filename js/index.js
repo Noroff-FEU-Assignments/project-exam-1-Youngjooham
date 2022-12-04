@@ -25,7 +25,7 @@ function createHTML(posts){
         postContainer.innerHTML += 
         `<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        <div class="mySlides fade">
+        <div class="mySlides">
             <a href="details.html?id=${post.id}"><img src="${post.better_featured_image.source_url}" style="width:100%">
             <div class="text">${post.title.rendered}</div>
         </div>`
@@ -33,7 +33,7 @@ function createHTML(posts){
         slideshowDots.innerHTML +=
         `<span class="dot" onclick="currentSlide(${index+1})"></span>`
 
-        if(index >= 10) {
+        if(index >= 9) {
             featuredDishes.innerHTML +=
             `<div class="post bloglist-post">
                 <a href="details.html?id=${post.id}"><img src="${post.better_featured_image.source_url}"></a>
@@ -47,12 +47,11 @@ function createHTML(posts){
 function loadCarousel() {
     showSlides(slideIndex);
 }
-// Next/previous controls
+
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }

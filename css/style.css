@@ -10,44 +10,52 @@
 	padding: 0px;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif 
 }
-.clearfix{
-	clear: both;
-}
+
+
 
 header{
 	padding: 20px 0px;
 	box-shadow: 2px 2px 15px var(--black);
 }
+
 .container{
 	width: 1140px;
 	max-width: 100%;
 	margin: 0 auto;
 }
-.nav-div{
-	width: 50%;
-	float: left;
+
+.header-container{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
 }
+
 .logo{
 	font-weight: bold;
 	font-size: 25px;
 	color: var(--black);
   text-decoration: none;
 }
+
 .logo span{
 	color: var(--main);
 }
+
 .nav{
 	float: right;
 }
+
 .nav li{
 	list-style: none;
 	float: left;
 	padding: 3px 20px;
 }
+
 .nav li a{
 	text-decoration: none;
 	color: var(--black);
 }
+
 .nav li button{
   padding: 7px 15px;
   background: var(--main);
@@ -74,15 +82,40 @@ header{
 
 .banner-section{
 	background: var(--main);
-	height: 400px;
 	overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+
+.banner-content {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
 .heading{
 	color: var(--white);
   font-size: 40px;
   letter-spacing: 1px;
-  margin-top: 14%;
 }
+
+.banner-heading{
+  color: var(--white);
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+.details p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 20px;
+  font-style: italic;
+  margin: 10px;
+}
+
 .p1{
   color: white;
   width: 395px;
@@ -91,11 +124,13 @@ header{
   letter-spacing: 1px;
   font-size: 20px;
 }
+
 .input-box{
 	box-shadow: 1px 7px 8px 0px #222121;
   width: 360px;
   border-radius: 50%;
 }
+
 .input-box input[type="text"]{
 	padding: 9px;
   width: 265px;
@@ -103,6 +138,7 @@ header{
   border-radius: 5px;
   outline: none;
 }
+
 .input-box button{
 	padding: 10px 27px;
   border-radius: 0px 5px 5px 0px;
@@ -112,55 +148,62 @@ header{
   color: white;
   cursor: pointer;
 }
+
 .ban-img{
 	width: 400px;
-	margin-bottom:-50px;
-
 }
+
 .b-img{
 	width: 100%;
 	border-radius: 10px;
 }
+
 .heading1{
 	margin-top: 20px;
 	color: var(--main);
 	font-size: 14px;
 	text-transform: uppercase;
 }
+
 .blog-heading{
 	font-size: 29px;
     font-weight: bold;
     margin-bottom: 20px;
     color: var(--black);
 }
+
 .text{
 	  font-size: 13px;
     letter-spacing: 1px;
     color: var(--black);
     margin-bottom: 20px;
 }
+
 .name{
 	text-transform: uppercase;
     font-weight: 600;
     color: #a1a1a1;
     font-size: 14px;
 }
+
 .lr-box{
 	padding: 10px 20px;
-
 }
+
 .b-img-1{
 	width: 100%;
 	height: 200px;
 	border-radius: 10px;
 	margin-top: 7px;
 }
+
 .blog-heading-1{
 	font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
     color: var(--black);
 }
+
 .line{
 	    width: 100%;
 	    margin-top: 15px;
@@ -168,6 +211,7 @@ header{
     height: 1px;
     background: #ddd;
 }
+
 .lr-box:hover{
 	opacity: 0.5;
 	cursor: pointer;
@@ -188,27 +232,33 @@ header{
 	float: left;
 	margin: 25px;
 }
+
 .box-2:hover{
 	opacity: 0.5;
 	cursor: pointer;
 }
+
 .foot-section{
 	background: var(--main);
 }
+
 .foot-inner{
 	width: 500px;
 	margin: 0 auto;
 	padding: 50px;
 	text-align: center;
 }
+
 .ibox2{
 	margin: 0 auto;
 	width: 380px;
 }
+
 footer{
 	background:var(--darkblue);
 	padding: 15px;
 }
+
 footer p{
 	color: var(--white);
 	text-align: center;
@@ -233,16 +283,16 @@ footer p{
   gap: 20px;
 }
 
-/*bloglist css  */
-
-.blog-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: antiquewhite;
+.bloglist-post {
+  flex: 0 0 20%;
 }
 
-.post {
-  padding: 40px 30px;
+.blog-list {
+  display: flex;
+  background-color: antiquewhite;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .post img{
@@ -250,25 +300,13 @@ footer p{
   width: 100%;
 }
 
-.blog-list{
-  display: grid;
-}
-
-
-
-/* View More Button */
-
 #more {display: none;} 
-
-
-/* Contact Form */
 
 .contactform-container{
   background-color: antiquewhite;
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem;
-  height: 50vh;
 }
 
 .contactButton {
@@ -324,6 +362,7 @@ input {
 .blogListTitle{
   font-size: 40px;
   color: #A5232C;
+  padding-bottom: 15px;
 }
 
 .form-error {
@@ -339,15 +378,23 @@ label {
   margin-top: 1rem;
 }
 
-/* About Us */
+.detailContainer {
+  background-color: antiquewhite;
+}
+
+.detail-h1 {
+  color: #A5232C;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .about{
   width: 100%;
-  height: 65vh;
   background-color: antiquewhite;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 150px;
 }
 
 .about .about-content img{
@@ -357,14 +404,12 @@ label {
 }
 
 .about-text{
-  width: 550px;
-  max-width: 100%;
+  max-width: 50%;
   padding: 0 10px;
 }
 
 .about-content{
   width: 1280px;
-  max-width: 95%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -414,7 +459,7 @@ label {
 }
 
 .detailContainer img{
-  width: 15%;
+  width: 20%;
   height: 15%;
 }
 
@@ -423,6 +468,12 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: antiquewhite;
+}
+
+.details h1 {
+  color: #A5232C;
+  margin-bottom: 30px;
 }
 
 .bloglist-post a {
@@ -443,19 +494,16 @@ label {
   color: red;
 }
 
-/* Slideshow container */
 .slideshow-container {
   max-width: 350px;
   position: relative;
   margin: auto;
 }
 
-/* Hide the images by default */
 .mySlides {
   display: none;
 }
 
-/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -471,18 +519,15 @@ label {
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Carousel Caption text */
 .text {
   color: white;
   font-size: 20px;
@@ -493,7 +538,6 @@ label {
   text-align: center;
 }
 
-/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -516,39 +560,10 @@ label {
 }
 
 #date{
+  font-style:italic;
   color:#A5232C
 }
 
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-
-/* About Us Responsiveness */
-
-@media screen and (max-width: 1200px) {
-  .about{
-    width: 100%;
-    height: auto;
-    padding: 70px 0px;
-  }
-
-}
-
-@media screen and (max-width: 650px) {
-  .about .about-content img{
-    margin-bottom: 35px;
-  }
-}
-
-/* test */
 
 .section-blogpost .form-input-container {
   display: block;
@@ -574,7 +589,6 @@ label {
   cursor: pointer;
 }
 
- /* Style the Image Used to Trigger the Modal */
  #myImg {
   border-radius: 5px;
   cursor: pointer;
@@ -650,5 +664,49 @@ button {
 }
 
 .featuredPosts {
+  margin-bottom: 20px;
   color: #A5232C;
+}
+
+.slideshow-background {
+  background-color: antiquewhite;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .about{
+    width: 100%;
+    height: auto;
+    padding: 70px 0px;
+  }
+
+  .banner-section{
+  
+    flex-direction: column;
+  }
+
+  .banner-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about .about-content img{
+    margin-bottom: 35px;
+  }
+
+  .blog-list{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .about{
+    width: 100%;
+    height: auto;
+    padding: 70px 0px;
+  }
 }
