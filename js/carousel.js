@@ -12,6 +12,7 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+  console.log(n, 'slideindex');
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
@@ -26,3 +27,4 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 } 
+

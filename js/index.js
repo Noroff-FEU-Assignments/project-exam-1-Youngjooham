@@ -1,14 +1,12 @@
-const url= "http://localhost/worldkitchen/wp-json/wp/v2/posts?per_page=3";
-
-// To show maximum 15 pages 
-//const url= "http://localhost/worldkitchen/wp-json/wp/v2/posts?per_page=15"; 
-const postContainer = document.querySelector(".latest-posts");
+const url = "https://localhostflower-power.shop/worldkitchen/wp-json/wp/v2/posts?per_page=13";
+let slideIndex = 1;
 
 async function getPosts(){
     try{
         const response = await fetch(url);
         const getResults = await response.json();
         createHTML(getResults);
+        loadCarousel();
     }
 
     catch(error){
@@ -19,13 +17,59 @@ async function getPosts(){
 getPosts();
 
 function createHTML(posts){
-    posts.forEach(function(post){
-        console.log(post)
+    const postContainer = document.querySelector(".slideshow-container");
+    const slideshowDots = document.querySelector(".slideshow-dots");
+    const featuredDishes = document.querySelector(".featured-dishes");
+
+    posts.forEach(function(post,index){
         postContainer.innerHTML += 
-        `<div class="post">
-            <img src="${post.better_featured_image.source_url}" alt="${post.content.rendered}">
-            <h2>${post.title.rendered}</h2>
-            ${post.excerpt.rendered}
-        </div>`;
+        `<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="mySlides fade">
+            <a href="details.html?id=${post.id}"><img src="${post.better_featured_image.source_url}" style="width:100%">
+            <div class="text">${post.title.rendered}</div>
+        </div>`
+
+        slideshowDots.innerHTML +=
+        `<span class="dot" onclick="currentSlide(${index+1})"></span>`
+
+        if(index >= 10) {
+            featuredDishes.innerHTML +=
+            `<div class="post bloglist-post">
+                <a href="details.html?id=${post.id}"><img src="${post.better_featured_image.source_url}"></a>
+                <a href="details.html?id=${post.id}">${post.title.rendered}</a>
+            </div>`;
+        }
     })
 }
+
+
+function loadCarousel() {
+    showSlides(slideIndex);
+}
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
