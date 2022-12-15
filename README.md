@@ -37,9 +37,9 @@ The brief: You have been tasked with creating a blog site. You can choose the de
 -  git clone https://github.com/Noroff-FEU-Assignments/project-exam-1-Youngjooham.git
 ```
 2. Install the dependencies:
-
+```bash
    npm install 
-
+```
 ## Running
 
 Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
