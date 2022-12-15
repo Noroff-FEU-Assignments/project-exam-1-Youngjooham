@@ -9,11 +9,15 @@
 
 The brief: You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
 
-Home page
-About page
-List of blog posts
-Blog post specific pages
-Contact page.
+-Home page
+
+-About page
+
+-List of blog posts
+
+-Blog post specific pages
+
+-Contact page.
 
 - Design
 - REST API
