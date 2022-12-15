@@ -5,7 +5,7 @@
 
 ## Description
 
-#### This website was made for my school Semester Project
+#### This website was made for my school project exam.
 
 The brief: You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
 
